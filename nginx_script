@@ -1,6 +1,14 @@
 #!/bin/bash
+
+########################################################
+##### USE THIS FILE IF YOU LAUNCHED AMAZON UBUNTU #####
+########################################################
+
+# get admin privileges
+sudo su
+
 yum update -y
-yum install nginx -y
+amazon-linux-extras install nginx1
 systemctl start nginx
 systemctl enable nginx
-echo "<h1>Hello World from $(hostname -f) </h1>" > /var/www/html/index.html
+echo "<h1>Hello World from $(hostname -f) </h1>" > /usr/share/nginx/html/index.html
